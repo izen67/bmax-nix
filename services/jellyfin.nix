@@ -29,7 +29,12 @@
   };
 
   # Admin access
-  users.users.globaladmin.extraGroups = [ "plexshare" ];
+  users.users.bmax.extraGroups = [ "plexshare" ];
+
+  # tmpfiles is meaningless for exFAT, but creating directory is fine
+  systemd.tmpfiles.rules = [
+    "d /media/plex 2770 root plexshare -"
+  ];
 
   # Correct exFAT mount MUST set uid/gid or perms won't work
   fileSystems."/media/plex" = {
@@ -45,10 +50,6 @@
     ];
   };
 
-  # tmpfiles is meaningless for exFAT, but creating directory is fine
-  systemd.tmpfiles.rules = [
-    "d /media/plex 2770 root plexshare -"
-  ];
 
   # Samba share
   services.samba = {
