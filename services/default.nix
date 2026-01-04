@@ -7,5 +7,6 @@
     ./cups.nix
     ./zoneminder.nix
     ./tailscale.nix
+    ./jellyfin.nix
   ];
 }
