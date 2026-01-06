@@ -2,5 +2,5 @@
 
 #### BMAX:
 ```bash
-sudo nixos-rebuild switch --flake github:izen67/homelab-nix#bmax --refresh
+sudo nixos-rebuild switch --flake github:izen67/bmax-nix#bmax --refresh
 ```
